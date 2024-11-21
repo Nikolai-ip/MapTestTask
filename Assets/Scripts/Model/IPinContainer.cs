@@ -9,7 +9,8 @@ namespace Model
         PinData GetPin(int pinID);
         void AddPin(PinData pinData);
         int GetFreeID();
-
+        void DeletePin(int pinID);
         List<PinData> GetPins();
+        
     }
 }

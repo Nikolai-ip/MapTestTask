@@ -27,6 +27,12 @@ namespace View
             _pinsInfoActionsHandler.OnMoreInfoClicked(_pinView.ID);
         }
 
+        public void OnPinDeleted()
+        {
+            _pinsInfoActionsHandler.OnPinDeleted(_pinView.ID);
+            gameObject.SetActive(false);
+        }
+
         public void OnDataEdited(string title, string info, string shortInfo, string imagePath)
         {
             var newData = new PinData(_pinView.ID, title, info, shortInfo, imagePath);

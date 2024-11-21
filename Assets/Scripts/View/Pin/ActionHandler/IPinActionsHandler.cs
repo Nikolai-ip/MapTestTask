@@ -10,5 +10,6 @@ namespace View
         event Action<int> PinSelected;
         event Action<int, Vector2> PinPosChanged;
         event Action<PinData> PinDataChanged;
+        event Action<int> PinDeleted;
     }
 }

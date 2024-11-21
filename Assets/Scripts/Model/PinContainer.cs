@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+
 
 namespace Model
 {
@@ -29,11 +29,6 @@ namespace Model
         public void AddPin(PinData pinData)
         {
             _pinData.Add(pinData);
-            // Debug.ClearDeveloperConsole();
-            // foreach (var pin in _pinData)
-            // {
-            //     Debug.Log(pin);
-            // }
         }
 
         public int GetFreeID()
@@ -42,6 +37,11 @@ namespace Model
                 return 0;
             int id = _pinData.OrderBy(pin => pin.ID).Last().ID + 1;
             return id;
+        }
+
+        public void DeletePin(int pinID)
+        {
+            _pinData.Remove(_pinData.Find(pinData => pinData.ID == pinID));
         }
 
         public List<PinData> GetPins()

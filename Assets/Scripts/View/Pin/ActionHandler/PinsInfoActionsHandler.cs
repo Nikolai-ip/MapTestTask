@@ -10,6 +10,7 @@ namespace View
         public event Action<int> PinSelected;
         public event Action<int, Vector2> PinPosChanged;
         public event Action<PinData> PinDataChanged;
+        public event Action<int> PinDeleted;
 
         public void OnPinSelected(int pinID)
         {
@@ -29,6 +30,11 @@ namespace View
         public void OnPinDataEdit(PinData pinData)
         {
             PinDataChanged?.Invoke(pinData);
+        }
+
+        public void OnPinDeleted(int pinID)
+        {
+            PinDeleted?.Invoke(pinID);
         }
     }
 }

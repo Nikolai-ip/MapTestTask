@@ -22,7 +22,7 @@ namespace Infrastructure
             var pinFabric = new PinFabric(pinContainer,_pinPool,_pinsInfoView);
             var pinPlacementPresenter= new PinPlacementPresenter(_fieldActionsHandler, pinFabric);
             var dataStorage = new DataStorage();
-            var pinInfoPresenter = new PinInfoPresenter(pinContainer, _pinsInfoView, _infoActionsHandler);
+            var pinInfoPresenter = new PinPresenter(pinContainer, _pinsInfoView, _infoActionsHandler);
             var dataStoragePresenter = new DataStoragePresenter(dataStorage, pinContainer, pinFabric, _saveButton);
             dataStoragePresenter.LoadPinsFromStorage();
         }
